@@ -7,7 +7,7 @@ import Schedule from '../Schedule/Schedule';
 const Header = () => (
   <div>
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">Expenses Demo</Navbar.Brand>
+      <Navbar.Brand href="#home">Shift Management Demo</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">

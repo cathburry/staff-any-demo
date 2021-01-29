@@ -13,7 +13,7 @@ import {
   newShiftEntry,
   shiftList,
 } from '../../actions/shift';
-import CustomDatePicker from '../common/CustomDatePicker';
+import FormDatePicker from '../common/FormDatePicker';
 import '../../styles/form.scss';
 import CustomTimePicker from '../common/CustomTimePicker';
 
@@ -107,7 +107,7 @@ const ShiftForm = (props: any) => {
                   }`}
                 >
                   <label htmlFor="date">Date</label>
-                  <CustomDatePicker
+                  <FormDatePicker
                     name="date"
                     currVal={values.date}
                     onChangeVal={setFieldValue}

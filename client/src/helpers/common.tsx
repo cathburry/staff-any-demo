@@ -17,3 +17,5 @@ export const getDayMonthYear = (datetime: any) => {
   const dt = toParseZone(datetime);
   return dt.format('D MMM YYYY');
 };
+
+export default getDayMonthYear;

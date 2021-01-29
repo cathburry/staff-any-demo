@@ -3,6 +3,7 @@
   arrow-body-style
 */
 import React, { FC, useEffect } from 'react';
+import { getDayMonthYear } from '../../helpers/common';
 import '../../styles/ruler.scss';
 
 interface PropsType {
@@ -77,7 +78,7 @@ const Ruler: FC<PropsType> = ({ shifts } : PropsType) => {
           className={`event stage-${shiftSlot} start-${parseTime(sh.startTime)} end-${parseTime(sh.endTime)} length-4`}
         >
           { sh.name }
-          <span>{ `${shiftSlot} shift` }</span>
+          <span>{ getDayMonthYear(sh.date) }</span>
           <span>{ `${sh.startTime} - ${sh.endTime}` }</span>
         </div>
       )

@@ -1,4 +1,4 @@
-/* Define Action Types for Expenses */
+/* Define Action Types for Shifts */
 export const NEW_SHIFT_ENTRY = 'NEW_SHIFT_ENTRY';
 export const SHIFT_LIST = 'SHIFT_LIST';
 export const SHIFT_LIST_PENDING = 'SHIFT_LIST_PENDING';
