@@ -45,7 +45,8 @@ const ShiftsList = () => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function confirmDelete(e: any) {
-    if (window.confirm('Are you sure you wish to delete this item?')) { // eslint-disable-line no-alert
+    if (window.confirm('Are you sure you wish to delete this item?')) {
+      // eslint-disable-line no-alert
       const results: any = await dispatch(deleteShiftEntry(e.target.id));
 
       if (results.action.payload.data.response === 'success') {
@@ -63,30 +64,30 @@ const ShiftsList = () => {
   const displayAList = () => {
     if (Object.keys(shifts).length > 0) {
       const row = shifts.map((item: any) => (
-          <Tr key={item.name}>
-            <Td>{item.name}</Td>
-            <Td>{item.date}</Td>
-            <Td>{item.startTime}</Td>
-            <Td>{item.endTime}</Td>
-            <Td>
-              <CustomButton
-                id={item._id}
-                label="Edit"
-                variant="warning"
-                size="sm"
-                onClick={() => triggerAction('edit', item)}
-              />
-              &nbsp;
-              <CustomButton
-                id={item._id}
-                label="Delete"
-                variant="danger"
-                size="sm"
-                onClick={confirmDelete}
-              />
-            </Td>
-          </Tr>
-        ));
+        <Tr key={item.name}>
+          <Td>{item.name}</Td>
+          <Td>{item.date}</Td>
+          <Td>{item.startTime}</Td>
+          <Td>{item.endTime}</Td>
+          <Td>
+            <CustomButton
+              id={item._id}
+              label="Edit"
+              variant="warning"
+              size="sm"
+              onClick={() => triggerAction('edit', item)}
+            />
+            &nbsp;
+            <CustomButton
+              id={item._id}
+              label="Delete"
+              variant="danger"
+              size="sm"
+              onClick={confirmDelete}
+            />
+          </Td>
+        </Tr>
+      ));
 
       return (
         <Table>
@@ -102,13 +103,12 @@ const ShiftsList = () => {
           <Tbody>{row}</Tbody>
         </Table>
       );
-    } 
-      return (
-        <p>
-          <em>There are no shifts at the moment.</em>
-        </p>
-      );
-    
+    }
+    return (
+      <p>
+        <em>There are no shifts at the moment.</em>
+      </p>
+    );
   };
 
   return (

@@ -16,14 +16,14 @@ const CustomDatePicker: FC<PropsType> = ({
   currVal,
   onChangeVal,
   className,
-} : PropsType) => (
-    <DatePicker
-      className={className}
-      selected={(currVal && new Date(currVal)) || null}
-      onChange={(val) => {
-        onChangeVal(name, val);
-      }}
-    />
-  );
+}: PropsType) => (
+  <DatePicker
+    className={className}
+    selected={(currVal && new Date(currVal)) || null}
+    onChange={(val) => {
+      onChangeVal(name, val);
+    }}
+  />
+);
 
 export default CustomDatePicker;

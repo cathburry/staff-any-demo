@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 import { Formik, Field, Form } from 'formik';
 import Yup from 'yup';
+import moment from 'moment';
 import {
   updateShiftEntry,
   newShiftEntry,
@@ -20,7 +21,12 @@ const validationSchema = Yup.object().shape({
   name: Yup.string().required('Name is required!'),
   date: Yup.date().required('Date is required!'),
   startTime: Yup.string().required('Start Time is required!'),
-  endTime: Yup.string().required('End Time is required!'),
+  endTime: Yup.string()
+    .required('End Time is required!')
+    .test('is-greater', 'end time should be greater', function (value) { // eslint-disable-line func-names
+      const { startTime } = this.parent;
+      return moment(value, 'HH:mm').isSameOrAfter(moment(startTime, 'HH:mm'));
+    }),
 });
 
 const ShiftForm = (props: any) => {
@@ -140,7 +146,6 @@ const ShiftForm = (props: any) => {
                     name="endTime"
                     currVal={values.endTime}
                     onChangeVal={setFieldValue}
-                    className="form-control"
                     placeholder="End Time"
                   />
                   {errors.endTime && touched.endTime && (

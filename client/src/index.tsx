@@ -10,7 +10,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { store } from './reducers/store';
 
-const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore); // eslint-disable-line @typescript-eslint/no-unused-vars
 const history = createBrowserHistory();
 
 ReactDOM.render(
@@ -18,5 +18,7 @@ ReactDOM.render(
     <Router history={history}>
       <App />
     </Router>
-  </Provider>, document.querySelector('.app-container') );
+  </Provider>,
+  document.querySelector('.app-container')
+);
 registerServiceWorker();

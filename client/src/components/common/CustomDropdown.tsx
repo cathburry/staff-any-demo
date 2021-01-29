@@ -24,17 +24,17 @@ const CustomDropDown: FC<PropsType> = ({
   style,
   children,
 }) => (
-    <select
-      name={name}
-      className={className}
-      value={value}
-      style={style}
-      onChange={(val) => {
-        onChangeVal(name, val);
-      }}
-    >
-      {children}
-    </select>
-  );
+  <select
+    name={name}
+    className={className}
+    value={value}
+    style={style}
+    onChange={(val) => {
+      onChangeVal(name, val);
+    }}
+  >
+    {children}
+  </select>
+);
 
 export default CustomDropDown;

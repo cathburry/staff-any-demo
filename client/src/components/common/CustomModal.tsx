@@ -16,14 +16,14 @@ const CustomModal: FC<PropsType> = ({
   modalHeading,
   children,
 }: PropsType) => (
-    <>
-      <Modal show={show} size={size} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>{modalHeading}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>{children}</Modal.Body>
-      </Modal>
-    </>
-  );
+  <>
+    <Modal show={show} size={size} onHide={handleClose}>
+      <Modal.Header closeButton>
+        <Modal.Title>{modalHeading}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>{children}</Modal.Body>
+    </Modal>
+  </>
+);
 
 export default CustomModal;
