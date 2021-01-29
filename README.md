@@ -1,7 +1,7 @@
 # StaffAny Shift Management Application
 
 ## Libraries used
-* React.JS for the frontend
+* React.JS & TypeScript for the frontend
 * Redux for state management
 * Node.JS & Express for the backend
 * MongoDB for the database
