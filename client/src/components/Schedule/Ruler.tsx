@@ -15,9 +15,13 @@ const Ruler: FC<PropsType> = ({ shifts } : PropsType) => {
 
   const getDateItems = () => {
     const times = [];
-    for(let i = 1; i < 24; i += 1){ 
+    for(let i = 0; i < 24; i += 1){ 
       for(let j = 0; j < 2; j += 1){
-        times.push(i + ":" + halfHours[j]);
+        if( i > 0) {
+          times.push(`${i}:${halfHours[j]}`);
+        } else {
+          times.push(`99:${halfHours[j]}`);
+        }
       }
     };
     return times;
@@ -27,7 +31,7 @@ const Ruler: FC<PropsType> = ({ shifts } : PropsType) => {
     return getDateItems().map((hour) => {
       return (
         <div className={`time start-${hour.replace(/:/g,'')}`}>
-          {hour}
+          {hour.replace('99', '00')}
         </div>
       );
     })
@@ -42,32 +46,31 @@ const Ruler: FC<PropsType> = ({ shifts } : PropsType) => {
   }
 
   const parseTime = (time: string) => {
+    console.log(time);
     let hours = parseInt(time.split(':')[0], 10);
     let minutes = parseInt(time.split(':')[1], 10);
 
-    if(minutes <= 15 || minutes > 45) {
+    if(minutes > 15  && minutes < 45) {
+      minutes = 30;
+    } else {
       if (minutes > 45) {
-        if(hours === 23) {
-          hours = 0;
-        } else {
-          hours += 1;
-        }
+        hours += 1;
       }
       minutes = 0;
-    } else {
-      minutes = 30;
     }
 
-    const newTime = `${hours}${('0' + minutes).slice(-2)}`;
+    if(hours > 23 || hours < 1) {
+      hours = 99;
+    }
 
-    console.log(newTime);
+    const newTime = `${ hours }${('0' + minutes).slice(-2)}`;
+
     return newTime;
   }
 
   const renderShifts = () => {
     return shifts.map((sh: any) => {
       const shiftSlot = getSlot(sh.startTime);
-      console.log(shifts);
       return (
         <div
           id={sh.id}

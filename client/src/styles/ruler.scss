@@ -1,4 +1,4 @@
-$blockTimes: 100,130,200,230,300,330,400,430,500,530,600,630,700,730,800,830,900,930,1000,1030,1100,1130,1200,1230,1300,1330,1400,1430,1500,1530,1600,1630,1700,1730,1800,1830,1900,1930,2000,2030,2100,2130,2200,2230,2300,2330;
+$blockTimes: 9900,9930,100,130,200,230,300,330,400,430,500,530,600,630,700,730,800,830,900,930,1000,1030,1100,1130,1200,1230,1300,1330,1400,1430,1500,1530,1600,1630,1700,1730,1800,1830,1900,1930,2000,2030,2100,2130,2200,2230,2300,2330;
 $blockLengths: 1, 2, 3, 4;
 
 
@@ -7,8 +7,10 @@ $blockLengths: 1, 2, 3, 4;
 	grid-gap: 0.2rem;
 	
 	grid-template-columns: 5rem repeat(4, 1fr);	
-	grid-template-rows: repeat(46, 0fr);
+	grid-template-rows: repeat(48, 0fr);
 	grid-template-areas:
+    "time9900 stage stage stage stage"
+    "time9930 stage stage stage stage"
     "time100 stage stage stage stage"
     "time130 stage stage stage stage"
     "time200 stage stage stage stage"
