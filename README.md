@@ -11,16 +11,11 @@
 ## Database Schema
 
 ```
-const ExpensesSchema = new Schema({
-  title: { type: String, required: true },
-  category: { type: String, required: true },
+const ShiftsSchema = new Schema({
+  name: { type: String, required: true },
   date: { type: Date, required: true },
-  value: { type: Number, required: true },
-});
-
-const CategorySchema = new Schema({
-  title: { type: String, required: true },
-  description: { type: String, required: true },
+  startTime: { type: String, required: true },
+  endTime: { type: String, required: true },
 });
 
 ```
