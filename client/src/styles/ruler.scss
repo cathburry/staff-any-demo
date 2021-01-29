@@ -107,4 +107,8 @@ $blockLengths: 1, 2, 3, 4;
 			grid-column-end: span #{$length};
 		}
 	}
+
+  &.stage-morning {background-color: #FFA726};
+  &.stage-afternoon {background-color: #4dc2ca};
 }
+

@@ -3,7 +3,6 @@
   arrow-body-style
 */
 import React, { FC, useEffect } from 'react';
-import moment from 'moment';
 import '../../styles/ruler.scss';
 
 interface PropsType {
@@ -35,7 +34,7 @@ const Ruler: FC<PropsType> = ({ shifts } : PropsType) => {
   }
 
   const getSlot = (hour: string) => {
-    if(('0' + hour).slice(-4) >= '12:00') {
+    if(('0' + hour).slice(-5) >= '12:00') {
       return 'afternoon';
     }
 
